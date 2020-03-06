@@ -1,0 +1,35 @@
+.header {
+  height: 7vh;
+  width: 100vw;
+  // background-color: white;
+  // opacity: 0.2;
+  background: -moz-linear-gradient(top, rgb(60, 243, 234), #FFF);
+  background: -webkit-linear-gradient(top, rgb(148, 240, 235), #FFF);
+  background: linear-gradient(to bottom, rgb(186, 236, 234), #FFF);
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+
+  &-left {
+    width: 400px;
+    line-height: 7vh;
+    margin-left: 20px;
+    &__serch {
+      width: 250px;
+    }
+
+  }
+
+  &-right {
+    margin-right: 20px;
+    line-height: 7vh;
+
+  &__btn {
+    text-decoration: none;
+    color: gray;
+  }
+
+
+  }
+}

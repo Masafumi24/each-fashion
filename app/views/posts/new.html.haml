@@ -1,0 +1,6 @@
+.wrapper
+  =form_with model: @post, class: "new__post",local: true do |form|
+    =form.text_field :title, placeholder: "title"
+    =form.text_field :image, placeholder: "Image Url"
+    =form.text_area :text, placeholder: "text"
+    =form.submit "SEND"
