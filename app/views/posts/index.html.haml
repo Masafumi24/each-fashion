@@ -14,9 +14,10 @@
 .main
   .main-side
     .main-side__box
-  .main-content
+  .main-content 
     - @posts.each do |post|
-      .main-content-image{style: "background-image: url(#{post.image});"}
+      = link_to "posts/#{post.id}", method: :get do
+        .main-content-image{style: "background-image: url(#{post.image});"}
 .footer
   = link_to new_post_path, class: "footer-btn" do
     %i.far.fa-plus-square
@@ -32,5 +33,7 @@
     -# - else
     -#   = link_to "Login", new_user_session_path, class: "header-right__btn"
     -#   = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
-
     -# current_user.name, user_path(current_user) 
+    -# .main-content
+    -# - @posts.each do |post|
+    -#   .main-content-image{style: "background-image: url(#{post.image});"}
