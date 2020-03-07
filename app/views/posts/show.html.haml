@@ -9,11 +9,13 @@
       = link_to "Login", new_user_session_path, class: "header-right__btn"
       = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
 .footer
+  = link_to "/",class: "footer-btn" do
+    %i.fas.fa-home
   = link_to new_post_path, class: "footer-btn" do
     %i.far.fa-plus-square
   = link_to "#", class: "footer-btn" do
     %i.fas.fa-hashtag
   = link_to "#", class: "footer-btn" do
     %i.far.fa-heart
-  = link_to "users/#{current_user.id}",class: "footer-btn" do
-    %i.fas.fa-home
+  = link_to "users/#{current_user.id}", class: "footer-btn" do
+    %i.fas.fa-smile

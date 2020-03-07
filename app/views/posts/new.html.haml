@@ -1,6 +1,27 @@
 .wrapper
+.header
+  .header-left
+    %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
+    %input{type: "submit", class: "header-left__btn", value:"serch"}
+  .header-right
+    - if user_signed_in?
+      = link_to "Logout", destroy_user_session_path, method: :delete, class: "header-right__btn"
+    - else
+      = link_to "Login", new_user_session_path, class: "header-right__btn"
+      = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
   =form_with model: @post, class: "new__post",local: true do |form|
     =form.text_field :title, placeholder: "title"
     =form.text_field :image, placeholder: "Image Url"
     =form.text_area :text, placeholder: "text"
     =form.submit "SEND"
+.footer
+  = link_to "/",class: "footer-btn" do
+    %i.fas.fa-home
+  = link_to new_post_path, class: "footer-btn" do
+    %i.far.fa-plus-square
+  = link_to "#", class: "footer-btn" do
+    %i.fas.fa-hashtag
+  = link_to "#", class: "footer-btn" do
+    %i.far.fa-heart
+  = link_to "users/#{current_user.id}", class: "footer-btn" do
+    %i.fas.fa-smile
