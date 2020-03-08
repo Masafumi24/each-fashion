@@ -11,7 +11,9 @@
       = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
   =form_with model: @post, class: "new__post",local: true do |form|
     =form.text_field :title, placeholder: "title"
-    =form.text_field :image, placeholder: "Image Url"
+    = form.label :image,class: 'main-form__box-image' do
+      = icon('fas', 'image')
+      = form.file_field :image, class: 'main-form__box-image__file'
     =form.text_area :text, placeholder: "text"
     =form.submit "SEND"
 .footer
@@ -25,3 +27,6 @@
     %i.far.fa-heart
   = link_to "users/#{current_user.id}", class: "footer-btn" do
     %i.fas.fa-smile
+-# = f.label :image,class: 'main-form__box-image' do
+-#           = icon('fas', 'image')
+-#           = f.file_field :image, class: 'main-form__box-image__file'
