@@ -11,12 +11,17 @@
 .main-content
   - @posts.each do |post|
     .main-content-image{style: "background-image: url(#{post.image});"}
+
+-# .btn
+-#   = link_to '削除', "/posts/#{post.id}", method: :delete
 .footer
+  = link_to "root_path",class: "footer-btn" do
+    %i.fas.fa-home
   = link_to new_post_path, class: "footer-btn" do
     %i.far.fa-plus-square
   = link_to "#", class: "footer-btn" do
     %i.fas.fa-hashtag
   = link_to "#", class: "footer-btn" do
     %i.far.fa-heart
-  = link_to user_path,class: "footer-btn" do
-    %i.fas.fa-home
+  = link_to "users/#{current_user.id}", class: "footer-btn" do
+    %i.fas.fa-smile
