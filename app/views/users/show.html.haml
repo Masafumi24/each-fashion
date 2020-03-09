@@ -9,6 +9,7 @@
       = link_to "Login", new_user_session_path, class: "header-right__btn"
       = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
 .main-content
+  - @posts.each do |post|
     .main-content-image{style: "background-image: url(#{post.image});"}
 .footer
   = link_to "root_path",class: "footer-btn" do
