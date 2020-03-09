@@ -1,45 +1,50 @@
-.header
-  .header-left
-    %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
-    %input{type: "submit", class: "header-left__btn", value:"serch"}
-  .header-right
-    - if user_signed_in?
+- if user_signed_in?
+  .header
+    .header-left
+      %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
+      %input{type: "submit", class: "header-left__btn", value:"serch"}
+    .header-right
       = link_to "Logout", destroy_user_session_path, method: :delete, class: "header-right__btn"
-    - else
-      = link_to "Login", new_user_session_path, class: "header-right__btn"
-      = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
-.introduction
-  .introduction-box
-    =image_tag src="logo.png", class: "introduction-box__image"
-.main
-  .main-side
-    .main-side__box
-  .main-content 
-    - @posts.each do |post|
-      = link_to "posts/#{post.id}", method: :get do
-        .main-content-image{style: "background-image: url(#{post.image});"}
-.footer
-  = link_to root_path,class: "footer-btn" do
-    %i.fas.fa-home
-  = link_to new_post_path, class: "footer-btn" do
-    %i.far.fa-plus-square
-  = link_to "#", class: "footer-btn" do
-    %i.fas.fa-hashtag
-  = link_to "#", class: "footer-btn" do
-    %i.far.fa-heart
-  - if user_signed_in?
+  .introduction
+    .introduction-box
+      =image_tag src="logo.png", class: "introduction-box__image"
+  .main
+    .main-side
+      .main-side__box
+    .main-content 
+      - @posts.each do |post|
+        = link_to "posts/#{post.id}", method: :get do
+          .main-content-image{style: "background-image: url(#{post.image});"}
+  .footer
+    = link_to root_path,class: "footer-btn" do
+      %i.fas.fa-home
+    = link_to new_post_path, class: "footer-btn" do
+      %i.far.fa-plus-square
+    = link_to "#", class: "footer-btn" do
+      %i.fas.fa-hashtag
+    = link_to "#", class: "footer-btn" do
+      %i.far.fa-heart
     = link_to "users/#{current_user.id}", class: "footer-btn" do
       %i.fas.fa-smile
-  - else
+- else
+  .header
+    .header-left
+      %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
+      %input{type: "submit", class: "header-left__btn", value:"serch"}
+    .header-right
+      = link_to "Login", new_user_session_path, class: "header-right__btn"
+      = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
+  .introduction
+    .introduction-box
+      =image_tag src="logo.png", class: "introduction-box__image"
+  .footer
+    = link_to root_path,class: "footer-btn" do
+      %i.fas.fa-home
+    = link_to "#", class: "footer-btn" do
+      %i.far.fa-plus-square
+    = link_to "#", class: "footer-btn" do
+      %i.fas.fa-hashtag
+    = link_to "#", class: "footer-btn" do
+      %i.far.fa-heart
     = link_to "#", class: "footer-btn" do
       %i.fas.fa-smile
-    -# user_path
-    -# - if user_signed_in?
-    -#   = link_to "Logout", destroy_user_session_path, method: :delete, class: "header-right__btn"
-    -# - else
-    -#   = link_to "Login", new_user_session_path, class: "header-right__btn"
-    -#   = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
-    -# current_user.name, user_path(current_user) 
-    -# .main-content
-    -# - @posts.each do |post|
-    -#   .main-content-image{style: "background-image: url(#{post.image});"}
