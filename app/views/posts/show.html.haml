@@ -15,6 +15,20 @@
   .content-image{style: "background-image: url(#{@post.image});"}
   .content-text
     = @post.text
+  .content-comment
+    = form_with(model: [@post, @comment], local: true) do |form|
+      = form.text_area :text, placeholder: "コメントする", class: "content-comment-fild"
+      = form.submit "SEND", class: "content-comment-submit"
+  .comments
+  %h4 ＜コメント一覧＞
+  - if @comments
+    - @comments.each do |comment|
+      %p
+        %strong
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          ：
+        = comment.text
+
 .footer
   = link_to "/",class: "footer-btn" do
     %i.fas.fa-home

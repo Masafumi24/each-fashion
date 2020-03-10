@@ -11,7 +11,7 @@
   .main
     .main-side
       .main-side__box
-    .main-content 
+    .main-content
       - @posts.each do |post|
         = link_to "posts/#{post.id}", method: :get do
           .main-content-image{style: "background-image: url(#{post.image});"}
