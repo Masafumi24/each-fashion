@@ -1,6 +1,111 @@
-.wrapper {
-  background-color: chartreuse;
-  height: 100vh;
+.new-header {
+  height: 7vh;
   width: 100vw;
+  background: -moz-linear-gradient(top, rgb(60, 243, 234), #FFF);
+  background: -webkit-linear-gradient(top, rgb(148, 240, 235), #FFF);
+  background: linear-gradient(to bottom, rgb(186, 236, 234), #FFF);
+  display: flex;
+  justify-content: space-between;
+
+  &-left {
+    width: 400px;
+    line-height: 7vh;
+    margin-left: 20px;
+    &__serch {
+      width: 250px;
+    }
+  }
+  &-right {
+    margin-right: 20px;
+    line-height: 7vh;
+
+    &__btn {
+      text-decoration: none;
+      color: gray;
+    }
+  }
+}
+.new__post {
+  height: 86vh;
+  width: 100vw;
+  background: -moz-linear-gradient(top, rgb(60, 243, 234), #FFF);
+  // background: -webkit-linear-gradient(top, rgb(148, 240, 235), #FFF);
+  // background: linear-gradient(to bottom, rgb(60, 243, 234),rgb(235, 243, 243), #FFF);
+  
+  .new__post-box {
+    width: 70vw;
+    height: 86vh;
+    background-color: white;
+    margin: 0 auto;
+    box-sizing: border-box;
+    line-height: 100px;
+    padding-top: 80px;
+    .new__post-title {
+      width: 70%;
+      height: 5vh;
+      display: block;
+      margin: 0 auto;
+      background: -moz-linear-gradient(top, rgb(60, 243, 234), #FFF);
+      background: -webkit-linear-gradient(top, rgb(148, 240, 235), #FFF);
+      background: linear-gradient(to bottom, rgb(60, 243, 234),rgb(235, 243, 243), #FFF);
+    
+    }
+    .new__post-image {
+      position: absolute;
+      top: 220px;
+      left: 550px;
+      .new__post-image__file {
+        margin: 0 auto;
+        
+      }
+    }
+    .new__post-area {
+      display: block;
+      width: 80%;
+      height: 20vh;
+      margin: 160px auto;
+      background: -moz-linear-gradient(top, rgb(60, 243, 234), #FFF);
+      background: -webkit-linear-gradient(top, rgb(148, 240, 235), #FFF);
+      background: linear-gradient(to bottom, rgb(60, 243, 234),rgb(235, 243, 243), #FFF);
+    
+    }
+    .send-btn {
+      display: block;
+      margin: 10px auto;
+      background: -moz-linear-gradient(top, rgb(60, 243, 234), #FFF);
+      background: -webkit-linear-gradient(top, rgb(148, 240, 235), #FFF);
+      background: linear-gradient(to bottom, rgb(60, 243, 234),rgb(235, 243, 243), #FFF);
+    
+    }
+  }
 }
 
+.new-footer {
+  height: 7vh;
+  width: 100vw;
+  background: -moz-linear-gradient(bottom, rgb(60, 243, 234), #FFF);
+  background: -webkit-linear-gradient(bottom, rgb(148, 240, 235), #FFF);
+  background: linear-gradient(to top, rgb(186, 236, 234), #FFF);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  &-btn {
+    height: 80%;
+    width: 25%;
+    line-height: 57px;
+  }
+    .far {
+      color: gray;
+      font-size: 40px;
+      text-decoration: none;
+    }
+
+    .fas {
+      color: gray;
+      font-size: 40px;
+      text-decoration: none;
+    }
+
+  }
