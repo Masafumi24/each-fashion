@@ -58,6 +58,23 @@
     top: 50vh;
     left: 5vw;
   }
+
+  &-box__login {
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 300px;
+    border-bottom: solid 1px black;
+
+  }
+  &-box__signup {
+    display: block;
+    position: absolute;
+    top: 270px;
+    left: 300px;
+    border-bottom: solid 1px black;
+
+  }
 }
 
 .footer {
