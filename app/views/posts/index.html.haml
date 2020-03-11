@@ -31,12 +31,13 @@
     .header-left
       %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
       %input{type: "submit", class: "header-left__btn", value:"serch"}
-    .header-right
-      = link_to "Login", new_user_session_path, class: "header-right__btn"
-      = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
   .introduction
     .introduction-box
       =image_tag src="logo.png", class: "introduction-box__image"
+      = link_to new_user_session_path, class: "introduction-box__login" do
+        = image_tag "login.png",:size =>'120x60'
+      = link_to new_user_registration_path, class: "introduction-box__signup" do
+        = image_tag "signup.png",:size =>'180x60'
   .footer
     = link_to root_path,class: "footer-btn" do
       %i.fas.fa-home
