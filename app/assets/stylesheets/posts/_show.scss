@@ -11,4 +11,12 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  .comment-list {
+    height: 40vh;
+    width: 30%;
+    background-color: red;
+    overflow: scroll;
+  }
 }
+
