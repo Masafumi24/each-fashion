@@ -26,10 +26,10 @@
     - @post.liked_users.each do |user|
       %li= user.email
   .content-comment
-    = form_with(model: [@post, @comment], local: true) do |form|
+    = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
       = form.text_area :text, placeholder: "コメントする", class: "content-comment-fild"
       = form.submit "SEND", class: "content-comment-submit"
-  .comments
+.comments
   %h4 ＜コメント一覧＞
   .comment-list
     - if @comments
@@ -38,7 +38,7 @@
           %strong
             = link_to comment.user.nickname, "/users/#{comment.user_id}"
             ：
-          = comment.text
+            = comment.text
 
 .footer
   = link_to "/",class: "footer-btn" do

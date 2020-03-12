@@ -68,3 +68,4 @@ gem 'mini_magick'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'font-awesome-sass'
+gem 'jquery-rails'
