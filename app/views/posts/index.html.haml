@@ -9,12 +9,12 @@
     .introduction-box
       =image_tag src="logo.png", class: "introduction-box__image"
   .main
-    .main-side
-      .main-side__box
+    .main-side-left
     .main-content
       - @posts.each do |post|
         = link_to "posts/#{post.id}", method: :get do
           .main-content-image{style: "background-image: url(#{post.image});"}
+    .main-side-right
   .footer
     = link_to root_path,class: "footer-btn" do
       %i.fas.fa-home

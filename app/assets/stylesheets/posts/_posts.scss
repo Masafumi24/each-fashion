@@ -110,40 +110,54 @@
 .main {
   display: flex;
 
-  &-side {
+  &-side-left {
     height: 100vh;
-    width: 250px;
-    background-color: rgb(104, 219, 223);
+    width: 50px;
+    // background-color: rgb(104, 219, 223);
     box-sizing: border-box;
     border: white 5px solid;
-    background: -moz-linear-gradient(right, rgb(66, 196, 200), #FFF);
-    background: -webkit-linear-gradient(left, rgb(66, 196, 200), #FFF);
-    background: linear-gradient(to center, rgb(66, 196, 200), #FFF);
-
-    &__box {
-
-      &-new {
-        text-decoration: none;
-        color: white;
-        
-      }
-    }
+    // background: -moz-linear-gradient(right, rgb(66, 196, 200), #FFF);
+    // background: -webkit-linear-gradient(left, rgb(122, 236, 240),rgb(173, 241, 243), #FFF);
+    // background: linear-gradient(to center, rgb(66, 196, 200), #FFF);
   }
+
+  &-side-right {
+    height: 100vh;
+    width: 50px;
+    // background-color: rgb(104, 219, 223);
+    box-sizing: border-box;
+    border: white 5px solid;
+    // background: -moz-linear-gradient(left, rgb(66, 196, 200), #FFF);
+    // background: -webkit-linear-gradient(right, rgb(122, 236, 240),rgb(173, 241, 243), #FFF);
+    // background: linear-gradient(to center, rgb(66, 196, 200), #FFF);
+
+  }
+
+      // &-new {
+      //   text-decoration: none;
+      //   color: white;
+        
+      // }
+  // }
 
   &-content {
     height: 100vh;
-    width: calc(100vw - 250px);
+    width: 100vw;
+    width: calc(100vw - 100px);
     background-color: white;
     box-sizing: border-box;
     padding: 5px;
     overflow: scroll;
+    margin: 0 auto;
 
     &-image {
       display: inline-block;
       box-sizing: border-box;
-      padding: 5px;
-      height: 44vh;
-      width: 33%;
+      // padding: 5px;
+      // height: 300px;
+      // width: 19.5%;
+      height: 261px;
+      width: 261px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
