@@ -27,10 +27,10 @@
     = link_to "users/#{current_user.id}", class: "footer-btn" do
       %i.fas.fa-smile
 - else
-  .header
-    .header-left
-      %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
-      %input{type: "submit", class: "header-left__btn", value:"serch"}
+  -# .header
+  -#   .header-left
+  -#     %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
+  -#     %input{type: "submit", class: "header-left__btn", value:"serch"}
   .introduction
     .introduction-box
       =image_tag src="logo.png", class: "introduction-box__image"
