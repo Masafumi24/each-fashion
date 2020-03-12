@@ -12,11 +12,11 @@
     background-position: center;
   }
 
-  .comment-list {
-    height: 40vh;
-    width: 30%;
-    background-color: red;
-    overflow: scroll;
-  }
+}
+
+.comment-list {
+  width: 25%;
+  height: 25vh;
+  overflow: scroll;
 }
 

@@ -22,10 +22,10 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log("hai")
       var html = buildHTML(data);
       $('.comment-list').append(html);
-      $('content-comment-fild').val('');
+      $('.comment-list').animate({ scrollTop: $('.comment-list')[0].scrollHeight});
+      $('.content-comment-fild').val('');
       $('.content-comment-submit').prop('disabled', false);
     })
     .fail(function(){
