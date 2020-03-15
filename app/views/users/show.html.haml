@@ -12,11 +12,11 @@
 
 .main
   .profiel
-    .profiel-image
-      %img{:src => "#{@user.image}"}
-    .profiel.name
+    .profiel-image{style: "background-image: url(#{@user.image});"}
+      -# %img{:src => "#{@user.image}"}
+    .profiel-name
       = @user.nickname
-    .profiel.text
+    .profiel-text
       = @user.profile
 
   .usermain-content
