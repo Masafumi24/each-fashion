@@ -1,35 +1,38 @@
-.userheader
-  .userheader-left
-    %input{type: "text", class: "userheader-left__serch", placeholder: "What title?"}
-    %input{type: "submit", class: "userheader-left__btn", value:"serch"}
-  .userheader-right
-    - if user_signed_in?
-      = link_to "Logout", destroy_user_session_path, method: :delete, class: "userheader-right__btn"
-      = link_to "edit", edit_user_registration_path, class: "userheader-right__btn"
-    - else
-      = link_to "Login", new_user_session_path, class: "userheader-right__btn"
-      = link_to "Sign up", new_user_registration_path, class: "userheader-right__btn"
+.userwrapper
+  .userheader
+    .userheader-left
+      %input{type: "text", class: "userheader-left__serch", placeholder: "What title?"}
+      %input{type: "submit", class: "userheader-left__btn", value:"serch"}
+    .userheader-right
+      - if user_signed_in?
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: "userheader-right__btn"
+        = link_to "edit", edit_user_registration_path, class: "userheader-right__btn"
+      - else
+        = link_to "Login", new_user_session_path, class: "userheader-right__btn"
+        = link_to "Sign up", new_user_registration_path, class: "userheader-right__btn"
 
-.main
-  .profiel
-    .profiel-image{style: "background-image: url(#{@user.image});"}
-      -# %img{:src => "#{@user.image}"}
-    .profiel-name
-      = @user.nickname
-    .profiel-text
-      = @user.profile
+  .usermain
+    .profiel
+      .profiel-image{style: "background-image: url(#{@user.image});"}
+        -# %img{:src => "#{@user.image}"}
+      .profiel-name
+        = @user.nickname
+      .profiel-text
+        -# = @user.profile
+        = simple_format(@user.profile)
+      =image_tag src="logo.png", class:"logo"
 
-  .usermain-content
-    - @posts.each do |post|
-      .usermain-content-image{style: "background-image: url(#{post.image});"}
-.userfooter
-  = link_to "/",class: "userfooter-btn" do
-    %i.fas.fa-home
-  = link_to new_post_path, class: "userfooter-btn" do
-    %i.far.fa-plus-square
-  = link_to "#", class: "userfooter-btn" do
-    %i.fas.fa-hashtag
-  = link_to "#", class: "userfooter-btn" do
-    %i.far.fa-heart
-  = link_to "#", class: "userfooter-btn" do
-    %i.fas.fa-smile
+    .usermain-content
+      - @posts.each do |post|
+        .usermain-content-image{style: "background-image: url(#{post.image});"}
+  .userfooter
+    = link_to "/",class: "userfooter-btn" do
+      %i.fas.fa-home
+    = link_to new_post_path, class: "userfooter-btn" do
+      %i.far.fa-plus-square
+    = link_to "#", class: "userfooter-btn" do
+      %i.fas.fa-hashtag
+    = link_to "#", class: "userfooter-btn" do
+      %i.far.fa-heart
+    = link_to "#", class: "userfooter-btn" do
+      %i.fas.fa-smile

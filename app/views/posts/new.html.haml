@@ -4,14 +4,16 @@
     %input{type: "submit", class: "new-header-left__btn", value:"serch"}
   .new-header-right
     = link_to "Logout", destroy_user_session_path, method: :delete, class: "header-right__btn"
+=image_tag src="logo.png", class: "new-introduction-box__image"
 =form_with model: @post, class: "new__post",local: true do |form|
   .new__post-box
-    =form.text_field :title, placeholder: "title", class: "new__post-title"
-    = form.label :image,class: 'new__post-image' do
-      = icon('fas', 'image')
-      = form.file_field :image, class: "new__post-image__file"
-    =form.text_area :text, placeholder: "text", class: "new__post-area"
-    =form.submit "SEND", class: "send-btn"
+    .new__post-box-opa
+      =form.text_field :title, placeholder: "title", class: "new__post-title"
+      = form.label :image,class: 'new__post-image' do
+        = icon('fas', 'image')
+        = form.file_field :image, class: "new__post-image__file"
+      =form.text_area :text, placeholder: "text", class: "new__post-area"
+      =form.submit "SEND", class: "send-btn"
 .new-footer
   = link_to "/",class: "new-footer-btn" do
     %i.fas.fa-home
