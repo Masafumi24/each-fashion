@@ -1,20 +1,20 @@
-.header
-  .header-left
+.show-header
+  .show-header-left
     %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
     %input{type: "submit", class: "header-left__btn", value:"serch"}
-  .header-right
+  .show-header-right
     - if user_signed_in?
       = link_to '削除', "/posts/#{@post.id}", method: :delete
       = link_to '編集', "/posts/#{@post.id}/edit", method: :get
     - else
-      = link_to "Login", new_user_session_path, class: "header-right__btn"
-      = link_to "Sign up", new_user_registration_path, class: "header-right__btn"
+      = link_to "Login", new_user_session_path, class: "show-header-right__btn"
+      = link_to "Sign up", new_user_registration_path, class: "show-header-right__btn"
 .content
   .content-title
     = @post.title
-  .content-image{style: "background-image: url(#{@post.image});"}
   .content-text
-    = @post.text
+    -# = @post.text
+    = simple_format(@post.text)
   .content-like
     %h3
       いいね件数: #{@post.likes.count}
@@ -24,11 +24,12 @@
       = button_to 'いいね', post_likes_path(@post)
     %h2 いいねしたユーザー
     - @post.liked_users.each do |user|
-      %li= user.email
+      %li= user.nickname
   .content-comment
     = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
       = form.text_area :text, placeholder: "コメントする", class: "content-comment-fild"
       = form.submit "SEND", class: "content-comment-submit"
+.image{style: "background-image: url(#{@post.image});"}
 .comments
   %h4 ＜コメント一覧＞
   .comment-list
@@ -40,14 +41,14 @@
             ：
             = comment.text
 
-.footer
-  = link_to "/",class: "footer-btn" do
+.show-footer
+  = link_to "/",class: "show-footer-btn" do
     %i.fas.fa-home
-  = link_to new_post_path, class: "footer-btn" do
+  = link_to new_post_path, class: "show-footer-btn" do
     %i.far.fa-plus-square
-  = link_to "#", class: "footer-btn" do
+  = link_to "#", class: "show-footer-btn" do
     %i.fas.fa-hashtag
-  = link_to "#", class: "footer-btn" do
+  = link_to "#", class: "show-footer-btn" do
     %i.far.fa-heart
-  = link_to "users/#{current_user.id}", class: "footer-btn" do
+  = link_to "users/#{current_user.id}", class: "show-footer-btn" do
     %i.fas.fa-smile

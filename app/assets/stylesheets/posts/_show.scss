@@ -1,22 +1,119 @@
-.content {
-  padding: 7vh 50px;
+.show-header{
+  height: 7vh;
+  width: 100vw;
+  // background-color: white;
+  // opacity: 0.2;
+  background: -moz-linear-gradient(top, rgb(60, 243, 234), #FFF);
+  background: -webkit-linear-gradient(top, rgb(148, 240, 235), #FFF);
+  background: linear-gradient(to bottom, rgb(186, 236, 234), #FFF);
+  display: flex;
+  justify-content: space-between;
+  // position: fixed;
+  // top: 0;
+  // z-index: 1;
 
-  &-image {
-    box-sizing: border-box;
-    padding: 5px;
-    height: 80vh;
-    width: 60%;
-    float: right;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  &-left {
+    width: 400px;
+    line-height: 7vh;
+    margin-left: 20px;
+    &__serch {
+      width: 250px;
+    }
+  }
+  &-right {
+    margin-right: 20px;
+    line-height: 7vh;
+
+  &__btn {
+    text-decoration: none;
+    color: gray;
   }
 
+  }
 }
 
-.comment-list {
-  width: 25%;
-  height: 25vh;
-  overflow: scroll;
+.content {
+  height: 40vh;
+  width: 40vw;
+  margin-left: 30px;
+  position: relative;
+
+  &-title {
+    border-bottom: solid 1px rgb(179, 179, 179);
+  }
+  &-text{
+    border-bottom: solid 1px rgb(179, 179, 179);
+    height: 130px;
+    overflow: scroll;
+  }
+  &-like {
+    width: 100%;
+    position: absolute;
+    top: 20vh;
+  }
+  &-comment {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    
+    &-fild {
+      width: 80%;
+    }
+  }
 }
 
+.image {
+  position: absolute;
+  top: 11vh;
+  right: 30px;
+  box-sizing: border-box;
+  padding: 5px;
+  height: 630px;
+  width: 630px;
+  float: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.comments {
+  width: 40%;
+  height: 46vh;
+  border: solid gray 1px;
+  margin-left: 30px;
+
+  .comment-list {
+    overflow: scroll;
+}
+}
+.show-footer {
+  height: 7vh;
+  width: 100vw;
+  // position: fixed;
+  // bottom: 0;
+  background: -moz-linear-gradient(bottom, rgb(60, 243, 234), #FFF);
+  background: -webkit-linear-gradient(bottom, rgb(148, 240, 235), #FFF);
+  background: linear-gradient(to top, rgb(186, 236, 234), #FFF);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  &-btn {
+    height: 80%;
+    width: 25%;
+    line-height: 57px;
+  }
+    .far {
+      color: gray;
+      font-size: 40px;
+      text-decoration: none;
+    }
+
+    .fas {
+      color: gray;
+      font-size: 40px;
+      text-decoration: none;
+    }
+}
