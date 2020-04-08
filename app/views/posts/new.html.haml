@@ -14,19 +14,15 @@
         = form.file_field :image, class: "new__post-image__file"
       =form.text_area :text, placeholder: "text", class: "new__post-area"
       =form.submit "SEND", class: "send-btn"
-.new-footer
-  = link_to "/",class: "new-footer-btn" do
-    %i.fas.fa-home
-  = link_to new_post_path, class: "new-footer-btn" do
-    %i.far.fa-plus-square
-  = link_to "#", class: "new-footer-btn" do
-    %i.fas.fa-hashtag
-  = link_to "#", class: "new-footer-btn" do
-    %i.far.fa-heart
-  = link_to "users/#{current_user.id}", class: "new-footer-btn" do
-    %i.fas.fa-smile
--# = f.label :image,class: 'main-form__box-image' do
--#           = icon('fas', 'image')
--#           = f.file_field :image, class: 'main-form__box-image__file'
-/users/:id(.:format)
--# "users/#{current_user.id}"
+-# .new-footer
+-#   = link_to "/",class: "new-footer-btn" do
+-#     %i.fas.fa-home
+-#   = link_to new_post_path, class: "new-footer-btn" do
+-#     %i.far.fa-plus-square
+-#   = link_to "#", class: "new-footer-btn" do
+-#     %i.fas.fa-hashtag
+-#   = link_to "#", class: "new-footer-btn" do
+-#     %i.far.fa-heart
+-#   = link_to user_path, class: "new-footer-btn" do
+-#     %i.fas.fa-smile
+      -# = link_to "/users/#{current_user.id}", class: "new-footer-btn" do
