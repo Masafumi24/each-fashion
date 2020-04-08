@@ -9,4 +9,34 @@
     %link{:href => "https://use.fontawesome.com/releases/v5.8.0/css/all.css", rel: "stylesheet"}
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .header
+      .header-left
+        %input{type: "text", class: "header-left__serch", placeholder: "What title?"}
+        %input{type: "submit", class: "header-left__btn", value:"serch"}
+      .header-right
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: "header-right__btn"
     = yield
+    - if user_signed_in?
+      .footer
+        = link_to root_path,class: "footer-btn" do
+          %i.fas.fa-home
+        = link_to new_post_path, class: "footer-btn" do
+          %i.far.fa-plus-square
+        = link_to "#", class: "footer-btn" do
+          %i.fas.fa-hashtag
+        = link_to "#", class: "footer-btn" do
+          %i.far.fa-heart
+        = link_to "/users/#{current_user.id}", class: "footer-btn" do
+          %i.fas.fa-smile
+    - else
+      .footer
+        = link_to root_path,class: "footer-btn" do
+          %i.fas.fa-home
+        = link_to "#", class: "footer-btn" do
+          %i.far.fa-plus-square
+        = link_to "#", class: "footer-btn" do
+          %i.fas.fa-hashtag
+        = link_to "#", class: "footer-btn" do
+          %i.far.fa-heart
+        = link_to "#", class: "footer-btn" do
+          %i.fas.fa-smile
