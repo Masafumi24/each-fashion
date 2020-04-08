@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: each-fashion_production
-  username: each-fashion
-  password: <%= ENV['EACH-FASHION_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  databace: db_production
+  # <<: *default
+  # database: each-fashion_production
+  # username: each-fashion
+  # password: <%= ENV['EACH-FASHION_DATABASE_PASSWORD'] %>
