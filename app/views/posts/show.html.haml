@@ -29,3 +29,5 @@
             = link_to comment.user.nickname, "/users/#{comment.user_id}"
             ：
             = comment.text
+.delete
+  = link_to "削除する", post_path, method: :delete, class: "deleteBtn"
