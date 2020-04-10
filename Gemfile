@@ -74,4 +74,4 @@ gem 'devise'
 gem "font-awesome-rails"
 gem 'font-awesome-sass'
 gem 'jquery-rails'
-gem 'fog',  '1.42'
+gem 'fog', '1.42'
